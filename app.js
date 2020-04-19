@@ -2,8 +2,11 @@
 const dateStr = '13.4';
 const isArchive = true;
 
+const baseFolder = '/אולפני קורונה/הקלטות לשיבוץ לוח השידוריםARCHIVE/DATE/';
+const archivePath = '/ארכיון';
+
 const config = require('./config.json');
-const limitFolders = 2;
+const limitFolders = -1;
 
 // supress Kaltura console messages -
 class CustomKalturaLogger {
@@ -21,8 +24,6 @@ var dbx = new Dropbox({
     accessToken: config.dropboxToken, 
     fetch: fetch 
   });
-const baseFolder = '/אולפני קורונה/הקלטות לשיבוץ לוח השידוריםARCHIVE/DATE/';
-var archivePath = '/ארכיון';
 const kaltura = require('kaltura-client');
 const kconfig = new kaltura.Configuration();
 kconfig.setLogger(klogger);
@@ -50,7 +51,7 @@ async function getAllDayStudioFolders() {
   const dbEntries = await dbx.filesListFolder({path: fullPath}).catch((e) => {console.error('\n*******\nDropbox Error: ' + e.error.error_summary + '\n*******\n');}); 
   var i = 0;
   for (const dbFile of dbEntries.entries) {
-    if (i >= limitFolders) break;
+    if (limitFolders > -1 && i >= limitFolders) break;
     if (dbFile['.tag'] == "folder")
       dbFolders.push(dbFile.path_lower);
     i += 1;
