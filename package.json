@@ -1,0 +1,21 @@
+{
+  "name": "dropbox2kaltura",
+  "version": "1.0.0",
+  "description": "Simple script to import files from Dropbox to Kaltura utilizing dropbox share links",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "kaltura",
+    "dropbox"
+  ],
+  "author": "Zohar Babin, Kaltura",
+  "license": "AGPL-3.0-or-later",
+  "dependencies": {
+    "dropbox": "^4.0.30",
+    "es6-promise": "^4.2.8",
+    "isomorphic-fetch": "^2.2.1",
+    "kaltura-client": "^15.20.0"
+  }
+}

@@ -1,0 +1,6 @@
+{
+	"secret": "YOUR_KALTURA_API_SECRET",
+	"partnerId": YOUR_KALTURA_ACCOUNT_ID,
+	"serviceUrl": "https://www.kaltura.com",
+	"dropboxToken": "YOUR_DROPBOX_API_ACCESS_TOKEN"
+}
