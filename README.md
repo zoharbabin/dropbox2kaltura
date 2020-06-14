@@ -2,7 +2,7 @@
 This is a very quick & dirty script to import files from Dropbox to Kaltura utilizing dropbox share links.  
 This script takes a parent Dropbox folder, then loops through all sub-folders, create a Dropbox share link and then submits an import job for each video to Kaltura.  
  
-To run it on your own Dropbox account - Edit app.js, and change the naming logic to suite your own (mostly in getAllDayStudioFolders). 
+To run it on your own Dropbox account - Edit app.js, and change the naming logic to suite your own (mostly in `getAllDayStudioFolders`). 
 
 > If you’re just testing things, set limitFolders to a number above 0 to limit the number of sub-folders you'll pull in the test run. This script does not delete, so make sure to go to the KMC and delete any test videos you’ve imported.
 
